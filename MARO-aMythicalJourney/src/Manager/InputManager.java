@@ -97,7 +97,20 @@ public class InputManager implements KeyListener {
     }
 
     public enum Event {
-        MOVE_LEFT, MOVE_RIGHT, MOVE_UP, MOVE_DOWN, OPEN_INVENTORY, INTERACT_WHIT_SOMTHING, SELECT_ITEM, SELECT_ITEM1, SELECT_ITEM2, SELECT_ITEM3, SELECT_ITEM4, TRIGGER_INVENTORY, USE_ITEM, OPEN_MENU;
+        MOVE_LEFT, 
+        MOVE_RIGHT, 
+        MOVE_UP, 
+        MOVE_DOWN, 
+        OPEN_INVENTORY, 
+        INTERACT_WHIT_SOMTHING, 
+        SELECT_ITEM, 
+        SELECT_ITEM1, 
+        SELECT_ITEM2, 
+        SELECT_ITEM3, 
+        SELECT_ITEM4, 
+        TRIGGER_INVENTORY, 
+        USE_ITEM, 
+        OPEN_MENU;
     }
 
     public Event getAction() {
