@@ -114,34 +114,34 @@ public class NPC {
 		this.y += y;
 	}
 	
-	private void SetYPosition(boolean MoveUp) {
+	private void setYPosition(boolean MoveUp) {
 		if (MoveUp)
 			this.y=this.y-32;
 		else
 			this.y=this.y+32;
 	}
 	
-	private void SetXPosition(boolean MoveRight) {
+	private void setXPosition(boolean MoveRight) {
 		if (MoveRight)
 			this.x=this.x+32;
 		else 
 			this.x=this.x-32;
 	}
 	
-	public void MoveUP() {
-		this.SetYPosition(true);
+	public void moveUP() {
+		this.setYPosition(true);
 	}
 	
-	public void MoveDown() {
-		this.SetYPosition(false);	
+	public void moveDown() {
+		this.setYPosition(false);	
 	}
 	
-	public void MoveRight() {
-		this.SetXPosition(true);
+	public void moveRight() {
+		this.setXPosition(true);
 	}
 	
-	public void MoveLeft() {
-		this.SetXPosition(false);
+	public void moveLeft() {
+		this.setXPosition(false);
 	}
 	
 	public Rectangle getBoundingBox() {

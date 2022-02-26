@@ -201,15 +201,15 @@ public class GameManager implements InputListener {
                     if(PlayerOne.getHealth() > 0) {
                     	
                     	if (npc.getX() < PlayerOne.getXPosition()) {
-                    		npc.MoveLeft();
+                    		npc.moveLeft();
                     	} else if (npc.getX() > PlayerOne.getXPosition()) {
-                    		npc.MoveRight();
+                    		npc.moveRight();
                     	} else if (npc.getY() > PlayerOne.getYPosition()) {
-                    		npc.MoveUP();
+                    		npc.moveUP();
                     	} else if (npc.getY() < PlayerOne.getYPosition()) {
-                    		npc.MoveDown();
+                    		npc.moveDown();
                     	} else {
-                    		npc.MoveUP();
+                    		npc.moveUP();
                     	}
                 
                     }
