@@ -17,7 +17,6 @@ import Objects.Inventory;
 import Objects.Item;
 import Objects.MapItem;
 import Objects.Player;
-import Objects.Player.Movement;
 import Rendering.GameImage;
 import Rendering.GameText;
 
