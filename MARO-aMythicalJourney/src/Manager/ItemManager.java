@@ -1,7 +1,6 @@
 package Manager;
 
 import Manager.TileManager.Tile;
-import Objects.Bomb;
 import Objects.Inventory;
 import Objects.Inventory.InventoryItem;
 import Objects.Item;
