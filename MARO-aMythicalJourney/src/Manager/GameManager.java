@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import javax.swing.JOptionPane;
+
 import Manager.InputManager.Event;
 import Manager.SoundManager.Sound;
 import Manager.TileManager.Tile;
@@ -181,20 +183,36 @@ public class GameManager implements InputListener {
                     npc.damage(1);
                 }
                 if (CollisionManager.getInstance().collidesWithObstacle(npc, PlayerOne)) {
-                    PlayerOne.Damage();
-                    SoundManager.getInstance().playSound(Sound.TEST2);
-                    if (npc.getX() < PlayerOne.GetXPosition()) {
-                        npc.MoveLeft();
-                    } else if (npc.getX() > PlayerOne.GetXPosition()) {
-                        npc.MoveRight();
-                    } else if (npc.getY() > PlayerOne.GetYPosition()) {
-                        npc.MoveUP();
-                    } else if (npc.getY() < PlayerOne.GetYPosition()) {
-                        npc.MoveDown();
-                    } else {
-                        npc.MoveUP();
+
+                	PlayerOne.Damage();
+                    SoundManager.getInstance().playSound(Sound.TEST2);                    
+                    
+                    if(PlayerOne.GetHealth() == 0) {
+                    	int showInternalConfirmDialog = JOptionPane.showInternalConfirmDialog(null, PlayerOne.GetName() + " du bist gestorben!");
+                    	if(showInternalConfirmDialog == 0) {
+                    		System.exit(0);
+                    	}
                     }
+                    
+                    // Kein NPC Movement mehr wenn der Spieler Tot ist
+                    if(PlayerOne.GetHealth() > 0) {
+                    	
+                    	if (npc.getX() < PlayerOne.GetXPosition()) {
+                    		npc.MoveLeft();
+                    	} else if (npc.getX() > PlayerOne.GetXPosition()) {
+                    		npc.MoveRight();
+                    	} else if (npc.getY() > PlayerOne.GetYPosition()) {
+                    		npc.MoveUP();
+                    	} else if (npc.getY() < PlayerOne.GetYPosition()) {
+                    		npc.MoveDown();
+                    	} else {
+                    		npc.MoveUP();
+                    	}
+                
+                    }
+            
                 }
+
             }
             for (int i = 0; i < events.size(); i++) {
                 Event event = events.remove(i);
