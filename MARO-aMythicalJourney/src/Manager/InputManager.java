@@ -30,9 +30,6 @@ public class InputManager implements KeyListener {
         listener = inputlistener;
     }
 
-    public InputManager() {
-    }
-
     @Override
     public void keyPressed(KeyEvent e) {
         if (blockInput) {
