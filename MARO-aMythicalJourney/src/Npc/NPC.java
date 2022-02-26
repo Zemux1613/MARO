@@ -3,10 +3,7 @@ package Npc;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 
-import Manager.CollisionManager;
-import Manager.GameManager;
-import Objects.Player;
-import Objects.Player.Movement; 
+import Objects.Player; 
 
 public class NPC {
 

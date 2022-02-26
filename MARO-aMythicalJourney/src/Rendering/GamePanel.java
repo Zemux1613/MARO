@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 
 class GamePanel extends JPanel {
 
+	private static final long serialVersionUID = -5660400078789557333L;
 	private List<GameImage> mapimages;
 	private List<GameImage> images;
 	private List<GameText> text;

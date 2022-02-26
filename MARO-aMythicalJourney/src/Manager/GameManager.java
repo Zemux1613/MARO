@@ -243,6 +243,9 @@ public class GameManager implements InputListener {
                     case OPEN_MENU:
                         setInMenu(false);
                         break;
+                        
+                        default:
+                        	break;
                 }
             }
         }

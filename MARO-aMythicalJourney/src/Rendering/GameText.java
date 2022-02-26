@@ -2,8 +2,6 @@ package Rendering;
 
 import java.awt.Color;
 
-import javax.swing.JLabel;
-
 public class GameText {
 	
 	private String Text;

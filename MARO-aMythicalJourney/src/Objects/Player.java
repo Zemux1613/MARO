@@ -1,14 +1,14 @@
 package Objects;
 
-import Manager.CollisionManager;
-import Manager.GameManager;
-import Manager.InputManager;
-import Manager.ItemManager;
-import Manager.TileManager;
-import Rendering.IOUtils;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
+
+import Manager.CollisionManager;
+import Manager.GameManager;
+import Manager.InputManager;
+import Manager.TileManager;
+import Rendering.IOUtils;
 
 public class Player {
 
