@@ -123,7 +123,7 @@ public class GameManager implements InputListener {
     }
 
     public GameImage getPlayerToRender() {
-        return new GameImage(PlayerOne.getSprite(), PlayerOne.GetXPosition(), PlayerOne.GetYPosition());
+        return new GameImage(PlayerOne.getSprite(), PlayerOne.getXPosition(), PlayerOne.getYPosition());
     }
 
     public GameImage getBoatToRender() {
@@ -187,23 +187,26 @@ public class GameManager implements InputListener {
                 	PlayerOne.Damage();
                     SoundManager.getInstance().playSound(Sound.TEST2);                    
                     
-                    if(PlayerOne.GetHealth() == 0) {
-                    	int showInternalConfirmDialog = JOptionPane.showInternalConfirmDialog(null, PlayerOne.GetName() + " du bist gestorben!");
+                    /**
+                     * TODO: Bessere Option finden einen Tod zu haendeln
+                     */
+                    if(PlayerOne.getHealth() == 0) {
+                    	int showInternalConfirmDialog = JOptionPane.showInternalConfirmDialog(null, PlayerOne.getName() + " du bist gestorben!");
                     	if(showInternalConfirmDialog == 0) {
                     		System.exit(0);
                     	}
                     }
                     
                     // Kein NPC Movement mehr wenn der Spieler Tot ist
-                    if(PlayerOne.GetHealth() > 0) {
+                    if(PlayerOne.getHealth() > 0) {
                     	
-                    	if (npc.getX() < PlayerOne.GetXPosition()) {
+                    	if (npc.getX() < PlayerOne.getXPosition()) {
                     		npc.MoveLeft();
-                    	} else if (npc.getX() > PlayerOne.GetXPosition()) {
+                    	} else if (npc.getX() > PlayerOne.getXPosition()) {
                     		npc.MoveRight();
-                    	} else if (npc.getY() > PlayerOne.GetYPosition()) {
+                    	} else if (npc.getY() > PlayerOne.getYPosition()) {
                     		npc.MoveUP();
-                    	} else if (npc.getY() < PlayerOne.GetYPosition()) {
+                    	} else if (npc.getY() < PlayerOne.getYPosition()) {
                     		npc.MoveDown();
                     	} else {
                     		npc.MoveUP();
@@ -218,16 +221,16 @@ public class GameManager implements InputListener {
                 Event event = events.remove(i);
                 switch (event) {
                     case MOVE_DOWN:
-                        PlayerOne.MoveDown();
+                        PlayerOne.moveDown();
                         break;
                     case MOVE_UP:
-                        PlayerOne.MoveUP();
+                        PlayerOne.moveUP();
                         break;
                     case MOVE_LEFT:
-                        PlayerOne.MoveLeft();
+                        PlayerOne.moveLeft();
                         break;
                     case MOVE_RIGHT:
-                        PlayerOne.MoveRight();
+                        PlayerOne.moveRight();
                         break;
                     case TRIGGER_INVENTORY:
                         showInventory = !showInventory;

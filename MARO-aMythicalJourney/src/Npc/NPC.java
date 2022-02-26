@@ -154,27 +154,27 @@ public class NPC {
 		
 		// es wird sich nur bewegt, wenn der Abstand zur Spielerkooridinate relevant
 		// gro ist
-		if ((currentPlayer.GetXPosition() - this.x) > this.moveSpeed) {				
+		if ((currentPlayer.getXPosition() - this.x) > this.moveSpeed) {				
 			xMove += this.moveSpeed;
-		} else if ((currentPlayer.GetXPosition() - this.x) < -this.
+		} else if ((currentPlayer.getXPosition() - this.x) < -this.
 				moveSpeed) {
 			xMove -= this.moveSpeed;
 		}
 
-		if ((currentPlayer.GetYPosition() - this.y) > this.moveSpeed) {
+		if ((currentPlayer.getYPosition() - this.y) > this.moveSpeed) {
 			yMove += this.moveSpeed;
-		} else if ((currentPlayer.GetYPosition() - this.y) < -this.moveSpeed) {
+		} else if ((currentPlayer.getYPosition() - this.y) < -this.moveSpeed) {
 			yMove -= this.moveSpeed;
 		} else {
-			if ((currentPlayer.GetXPosition() - this.x) > 0) {
+			if ((currentPlayer.getXPosition() - this.x) > 0) {
 				xMove -= this.retreatSpeed;
-			} else if ((currentPlayer.GetXPosition() - this.x) < 0) {
+			} else if ((currentPlayer.getXPosition() - this.x) < 0) {
 				xMove += this.retreatSpeed;
 			}
 
-			if ((currentPlayer.GetYPosition() - this.y) > 0) {
+			if ((currentPlayer.getYPosition() - this.y) > 0) {
 				yMove -= this.retreatSpeed;
-			} else if ((currentPlayer.GetYPosition() - this.y) < 0) {
+			} else if ((currentPlayer.getYPosition() - this.y) < 0) {
 				yMove += this.retreatSpeed;
 			}
 

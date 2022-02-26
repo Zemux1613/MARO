@@ -13,34 +13,37 @@ import Rendering.IOUtils;
 public class Player {
 
     public enum Movement {
-        Left, Right, Up, Down
+        Left, 
+        Right, 
+        Up, 
+        Down
     }
 
     private Movement currentDirection = Movement.Right;
-    private int YPosition;
-    private int XPosition;
+    private int yPosition;
+    private int xPosition;
     private float Health = 10;
-    private String Name;
-    private String PlayerImageNames[];
-    private BufferedImage PlayerImages[];
+    private String name;
+    private String playerImageNames[];
+    private BufferedImage playerImages[];
     private boolean canWhaterWalk;
 
     public Player(int XPos, int YPos, String PlayerName) {
-        this.XPosition = XPos;
-        this.YPosition = YPos;
-        this.Name = PlayerName;
-        this.PlayerImageNames = new String[]{"link_right.png", "link_left.png", "link_right.png", "link_top.png", "link_back.png"};
-        this.PlayerImages = new BufferedImage[5];
+        this.xPosition = XPos;
+        this.yPosition = YPos;
+        this.name = PlayerName;
+        this.playerImageNames = new String[]{"link_right.png", "link_left.png", "link_right.png", "link_top.png", "link_back.png"};
+        this.playerImages = new BufferedImage[5];
         this.canWhaterWalk = false;
     }
 
 //SETTER
     public void setXPosition(int xPosition) {
-        XPosition = xPosition;
+        this.xPosition = xPosition;
     }
 
     public void setYPosition(int yPosition) {
-        YPosition = yPosition;
+        this.yPosition = yPosition;
     }
 
     public void toggleCanWhaterWalk() {
@@ -60,19 +63,19 @@ public class Player {
     }
 
 //GETTER
-    public int GetXPosition() {
-        return this.XPosition;
+    public int getXPosition() {
+        return this.xPosition;
     }
 
-    public String GetName() {
-        return Name;
+    public String getName() {
+        return name;
     }
 
-    public int GetYPosition() {
-        return this.YPosition;
+    public int getYPosition() {
+        return this.yPosition;
     }
 
-    public float GetHealth() {
+    public float getHealth() {
         return this.Health;
     }
 
@@ -81,7 +84,7 @@ public class Player {
     }
 
 //MOVEMENT
-    public void MoveUP() {
+    public void moveUP() {
         if (this.currentDirection == Movement.Up) {
             if (TileManager.checkMapCollision()) {
                 GameManager.getInstance().getTiles().changeMap(this.currentDirection);
@@ -94,7 +97,7 @@ public class Player {
         this.currentDirection = Movement.Up;
     }
 
-    public void MoveDown() {
+    public void moveDown() {
         if (this.currentDirection == Movement.Down) {
             if (TileManager.checkMapCollision()) {
                 GameManager.getInstance().getTiles().changeMap(this.currentDirection);
@@ -109,7 +112,7 @@ public class Player {
         this.currentDirection = Movement.Down;
     }
 
-    public void MoveRight() {
+    public void moveRight() {
         if (this.currentDirection == Movement.Right) {
             if (TileManager.checkMapCollision()) {
                 GameManager.getInstance().getTiles().changeMap(this.currentDirection);
@@ -124,7 +127,7 @@ public class Player {
         this.currentDirection = Movement.Right;
     }
 
-    public void MoveLeft() {
+    public void moveLeft() {
         if (this.currentDirection == Movement.Left) {
             if (TileManager.checkMapCollision()) {
                 GameManager.getInstance().getTiles().changeMap(this.currentDirection);
@@ -149,23 +152,23 @@ public class Player {
 
 //COLLISION
     public Rectangle getBoundingBox() {
-        return new Rectangle(XPosition + 1, YPosition + 1, 64 - 1, 64 - 1);
+        return new Rectangle(xPosition + 1, yPosition + 1, 64 - 1, 64 - 1);
     }
 
     public Point getTileInFront() {
         Point p = null;
         switch (currentDirection) {
             case Right:
-                p = new Point((XPosition / 64) + 1, YPosition / 64);
+                p = new Point((xPosition / 64) + 1, yPosition / 64);
                 break;
             case Left:
-                p = new Point((XPosition / 64) - 1, YPosition / 64);
+                p = new Point((xPosition / 64) - 1, yPosition / 64);
                 break;
             case Up:
-                p = new Point(XPosition / 64, (YPosition / 64) - 1);
+                p = new Point(xPosition / 64, (yPosition / 64) - 1);
                 break;
             case Down:
-                p = new Point(XPosition / 64, (YPosition / 64) + 1);
+                p = new Point(xPosition / 64, (yPosition / 64) + 1);
                 break;
         }
         return p;
@@ -175,34 +178,34 @@ public class Player {
     public BufferedImage getSprite() {
         switch (this.currentDirection) {
             case Left:
-                if (PlayerImages[1] == null) {
-                    PlayerImages[1] = IOUtils.load("Images", PlayerImageNames[1]);
+                if (playerImages[1] == null) {
+                    playerImages[1] = IOUtils.load("Images", playerImageNames[1]);
                 }
-                return PlayerImages[1];
+                return playerImages[1];
 
             case Right:
-                if (PlayerImages[2] == null) {
-                    PlayerImages[2] = IOUtils.load("Images", PlayerImageNames[2]);
+                if (playerImages[2] == null) {
+                    playerImages[2] = IOUtils.load("Images", playerImageNames[2]);
                 }
-                return PlayerImages[2];
+                return playerImages[2];
 
             case Up:
-                if (PlayerImages[4] == null) {
-                    PlayerImages[4] = IOUtils.load("Images", PlayerImageNames[4]);
+                if (playerImages[4] == null) {
+                    playerImages[4] = IOUtils.load("Images", playerImageNames[4]);
                 }
-                return PlayerImages[4];
+                return playerImages[4];
 
             case Down:
-                if (PlayerImages[3] == null) {
-                    PlayerImages[3] = IOUtils.load("Images", PlayerImageNames[3]);
+                if (playerImages[3] == null) {
+                    playerImages[3] = IOUtils.load("Images", playerImageNames[3]);
                 }
-                return PlayerImages[3];
+                return playerImages[3];
 
             default:
-                if (PlayerImages[0] == null) {
-                    PlayerImages[0] = IOUtils.load("Images", PlayerImageNames[0]);
+                if (playerImages[0] == null) {
+                    playerImages[0] = IOUtils.load("Images", playerImageNames[0]);
                 }
-                return PlayerImages[0];
+                return playerImages[0];
         }
     }
 
@@ -220,22 +223,22 @@ public class Player {
             status = 0;
             switch (m) {
                 case Right:
-                    start = GameManager.getInstance().GetPlayer().GetXPosition();
+                    start = GameManager.getInstance().GetPlayer().getXPosition();
                     multiplier = 1;
                     horizontal = true;
                     break;
                 case Down:
-                    start = GameManager.getInstance().GetPlayer().GetYPosition();
+                    start = GameManager.getInstance().GetPlayer().getYPosition();
                     multiplier = 1;
                     horizontal = false;
                     break;
                 case Up:
-                    start = GameManager.getInstance().GetPlayer().GetYPosition();
+                    start = GameManager.getInstance().GetPlayer().getYPosition();
                     horizontal = false;
                     multiplier = -1;
                     break;
                 case Left:
-                    start = GameManager.getInstance().GetPlayer().GetXPosition();
+                    start = GameManager.getInstance().GetPlayer().getXPosition();
                     horizontal = true;
                     multiplier = -1;
                     break;

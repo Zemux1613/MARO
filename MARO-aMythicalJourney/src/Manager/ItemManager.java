@@ -67,8 +67,8 @@ public class ItemManager {
             MapItem mi = (MapItem) currentItem;
             if (mi.getName().equals("Bomb")) {
                 Player currentPlayer = GameManager.getInstance().GetPlayer();
-                int x = currentPlayer.GetXPosition() / 64;
-                int y = currentPlayer.GetYPosition() / 64;
+                int x = currentPlayer.getXPosition() / 64;
+                int y = currentPlayer.getYPosition() / 64;
                 switch(currentPlayer.getPlayerDirection()) {
                     case Right:
                         x++;

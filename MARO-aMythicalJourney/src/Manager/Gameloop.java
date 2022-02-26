@@ -112,7 +112,7 @@ public class Gameloop implements Runnable {
 
 		textList.addAll(GameManager.getInstance().getInventory().getInventoryAmountToRender());
 		
-		textList.add(new GameText("LP:   "+GameManager.getInstance().GetPlayer().GetHealth(), 325, 40, 0, 0, "Helvetica", Color.BLACK, 20));
+		textList.add(new GameText("LP:   "+GameManager.getInstance().GetPlayer().getHealth(), 325, 40, 0, 0, "Helvetica", Color.BLACK, 20));
 		
 		gameframe.setText(textList);
 		

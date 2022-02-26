@@ -68,7 +68,7 @@ public class TileManager {
                     if (mapMap[((int) currMapPosition.getX() + 1)][(int) currMapPosition.getY()] != -1) {
                         currMapPosition.x += 1;
                         loadMap(mapMap[(int) currMapPosition.getX()][(int) (currMapPosition.getY())]);
-                        GameManager.getInstance().GetPlayer().setYPosition(GameManager.getInstance().GetPlayer().GetYPosition() - 7 * 64);
+                        GameManager.getInstance().GetPlayer().setYPosition(GameManager.getInstance().GetPlayer().getYPosition() - 7 * 64);
                         result = true;
                     } else {
                         GameManager.getInstance().GetPlayer().setPlayerDirection(Movement.Up);
@@ -79,7 +79,7 @@ public class TileManager {
                         if (mapMap[((int) currMapPosition.getX() - 1)][(int) currMapPosition.getY()] != -1) {
                             currMapPosition.x -= 1;
                             loadMap(mapMap[(int) currMapPosition.getX()][(int) (currMapPosition.getY())]);
-                            GameManager.getInstance().GetPlayer().setYPosition(GameManager.getInstance().GetPlayer().GetYPosition() + 7 * 64);
+                            GameManager.getInstance().GetPlayer().setYPosition(GameManager.getInstance().GetPlayer().getYPosition() + 7 * 64);
                             result = true;
                         }
                     } else {
@@ -90,7 +90,7 @@ public class TileManager {
                     if (mapMap[(int) currMapPosition.getX()][(int) (currMapPosition.getY() + 1)] != -1) {
                         currMapPosition.y += 1;
                         loadMap(mapMap[(int) currMapPosition.getX()][(int) (currMapPosition.getY())]);
-                        GameManager.getInstance().GetPlayer().setXPosition(GameManager.getInstance().GetPlayer().GetXPosition() - 11 * 64);
+                        GameManager.getInstance().GetPlayer().setXPosition(GameManager.getInstance().GetPlayer().getXPosition() - 11 * 64);
                         result = true;
                     } else {
                         GameManager.getInstance().GetPlayer().setPlayerDirection(Movement.Left);
@@ -101,7 +101,7 @@ public class TileManager {
                         if (mapMap[(int) currMapPosition.getX()][(int) (currMapPosition.getY() - 1)] != -1) {
                             currMapPosition.y -= 1;
                             loadMap(mapMap[(int) currMapPosition.getX()][(int) (currMapPosition.getY())]);
-                            GameManager.getInstance().GetPlayer().setXPosition(GameManager.getInstance().GetPlayer().GetXPosition() + 11 * 64);
+                            GameManager.getInstance().GetPlayer().setXPosition(GameManager.getInstance().GetPlayer().getXPosition() + 11 * 64);
                             result = true;
                         }
                     } else {
