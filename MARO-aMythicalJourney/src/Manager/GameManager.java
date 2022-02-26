@@ -16,6 +16,7 @@ import Objects.Boat;
 import Objects.Inventory;
 import Objects.Item;
 import Objects.MapItem;
+import Objects.MapItemCoin;
 import Objects.Player;
 import Rendering.GameImage;
 import Rendering.GameText;
@@ -52,7 +53,8 @@ public class GameManager implements InputListener {
         inventory = Inventory.getInstance();
 
         itemManager = new ItemManager();
-        itemManager.addItem("0", new MapItem("Sword", true, false, 0, 0, 64, 64, "Coin.png"));
+        itemManager.addItem("0", new MapItemCoin());
+//        itemManager.addItem("0", new MapItem("Sword", true, false, 0, 0, 64, 64, "Coin.png"));
         itemManager.addItem("1", new MapItem("Bomb", true, true, 0, 0, 64, 64, "bomb.png"));
         itemManager.addItem("2", new MapItem("Bomb", true, true, 320, 320, 64, 64, "bomb.png"));
         itemManager.addItem("2", new MapItem("Bomb", true, true, 320, 200, 64, 64, "bomb.png"));

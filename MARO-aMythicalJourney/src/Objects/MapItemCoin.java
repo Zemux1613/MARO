@@ -11,9 +11,9 @@ public class MapItemCoin extends MapItem {
 	private BufferedImage sprite;
 
 	public MapItemCoin() {
-		super("Coin", false, true, 64*5, 64*3, 64, 64, "");
+		super("Coin", false, true, 64*5, 64*3, 64, 64, "Coin.png");
 		value = 10;
-		sprite = IOUtils.getBufferedImage("Sword.png");
+		sprite = IOUtils.getBufferedImage("Coin_bag.png");
 	}
 	
 	public int getValue() {
@@ -24,6 +24,4 @@ public class MapItemCoin extends MapItem {
 		return sprite;
 	}
 	
-	
-
 }
