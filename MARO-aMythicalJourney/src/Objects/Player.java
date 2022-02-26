@@ -52,7 +52,11 @@ public class Player {
     }
 
     public void Damage() {
-        this.Health -= 0.5;
+    	if((this.Health - 0.5) > 0) {
+    		this.Health -= 0.5;	
+    	} else {
+    		this.Health = 0f;
+    	}
     }
 
 //GETTER

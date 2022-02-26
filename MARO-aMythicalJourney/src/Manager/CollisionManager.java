@@ -28,7 +28,7 @@ public class CollisionManager {
 
     public CollisionManager() {
         this.obstacles = new boolean[0][0];
-//		this.npc = new ArrayList<NPC>();
+		this.npcs = new ArrayList<NPC>();
         this.items = new ArrayList<>();
         this.tileSize = 64;
     }
