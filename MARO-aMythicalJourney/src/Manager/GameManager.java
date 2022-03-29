@@ -187,14 +187,11 @@ public class GameManager implements InputListener {
                 	PlayerOne.Damage();
                     SoundManager.getInstance().playSound(Sound.TEST2);                    
                     
-                    /**
-                     * TODO: Bessere Option finden einen Tod zu haendeln
-                     */
                     if(PlayerOne.getHealth() == 0) {
-                    	int showInternalConfirmDialog = JOptionPane.showInternalConfirmDialog(null, PlayerOne.getName() + " du bist gestorben!");
-                    	if(showInternalConfirmDialog == 0) {
-                    		System.exit(0);
-                    	}
+
+                        /**
+                         * TODO: Mit Tod umgehen
+                         */	
                     }
                     
                     // Kein NPC Movement mehr wenn der Spieler Tot ist
