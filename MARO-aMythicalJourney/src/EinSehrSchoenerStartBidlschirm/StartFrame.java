@@ -26,6 +26,7 @@ public class StartFrame extends JFrame implements ActionListener {
 		setResizable(false);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setPreferredSize(new Dimension(500, 500));
+		setLocationRelativeTo(null);
 		
 		spanel = new StartPanel();
 		ngpanel = new NewGamePanel();
