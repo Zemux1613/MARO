@@ -75,8 +75,11 @@ public class StartFrame extends JFrame implements ActionListener {
 			
 		} else if (e.getSource() == ngpanel.startButton) {
 			dispose();
-			newPlayerName = ngpanel.tf.getText();
-			return;
+			String userName = ngpanel.tf.getText();
+			if(!userName.isEmpty()) {
+				newPlayerName = userName;
+				return;				
+			}
 			//START GAME
 		}
 		
